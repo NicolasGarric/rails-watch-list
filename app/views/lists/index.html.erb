@@ -1,0 +1,10 @@
+<h1>Your Lists</h1>
+
+<div><%= link_to 'Create a new list', new_list_path %></div>
+<br><br>
+<ul class="list-group">
+  <% @lists.each do |list| %>
+    <li class="list-group-item"><%= link_to list.name, list_path(list) %></li>
+  <% end %>
+</ul>
+<br>
