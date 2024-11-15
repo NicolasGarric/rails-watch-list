@@ -1,10 +1,17 @@
-<h1>Your Lists</h1>
-
-<div><%= link_to 'Create a new list', new_list_path %></div>
-<br><br>
-<ul class="list-group">
+<nav class="p-3 mb-2 bg-black text-white rounded">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Welcome to your beautiful movie list management application</a>
+  </div>
+</nav>
+<br>
+<h4>Your Lists</h4>
+<br>
+<div class='btn btn-dark'><%= link_to 'Create a new list', new_list_path, class:"text-decoration-none text-light" %></div>
+<br>
+<br>
+<ul class="list-group list-group-flush w-50">
   <% @lists.each do |list| %>
-    <li class="list-group-item"><%= link_to list.name, list_path(list) %></li>
+    <li class="list-group-item"><%= link_to list.name, list_path(list), class:"text-decoration-none text-dark" %></li>
   <% end %>
 </ul>
 <br>

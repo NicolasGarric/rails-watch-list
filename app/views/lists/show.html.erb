@@ -1,18 +1,31 @@
-<h2><%= @list.name %></h2>
+<br>
+<h4><%= @list.name %></h4>
 
-<%= link_to 'Return to List', lists_path %>
-
-<%= link_to "Delete",
-  list_path(@list),
+<div class="btn btn-danger"><%= link_to "Delete list",
+  list_path(@list), class:"text-decoration-none text-light",
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+  %>
+</div>
 
-<%= link_to 'Create a bookmark', new_list_bookmark_path(@list) %>
+<br>
+<br>
 
-<p><strong>Liste bookmarks</strong></p>
-<ul class="list-group">
+<div class="btn btn-dark">
+  <%= link_to 'Create a bookmark', new_list_bookmark_path(@list), class:"text-decoration-none text-light" %>
+</div>
+
+<br>
+<br>
+
+<p><strong>My bookmarks</strong></p>
+<ul class="list-group list-group-flush w-50">
   <% @list.bookmarks.each do |bookmark| %>
-    <li class="list-group-item"><%= bookmark.movie.title %> - <%= bookmark.comment %> - <%= link_to 'Delete', bookmark_path(bookmark) %></li>
+    <li class="list-group-item"><%= bookmark.movie.title %> -
+    <%= bookmark.comment %>
+      <%= link_to 'X', bookmark_path(bookmark), class:"btn btn-danger text-decoration-none text-light",
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
   <% end %>
 </ul>
 <br>
+
+<div class="btn btn-dark mb-2"><%= link_to 'Return to Lists', lists_path, class:"text-decoration-none text-light" %></div>

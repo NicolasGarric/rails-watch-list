@@ -1,9 +1,17 @@
-<p>Create a bookamrk :</p>
+<div>
+  <h4>Create a bookmark:</h4>
+</div>
 
-<%= simple_form_for([@list, @bookmark]) do |f| %>
-  <%= f.input :comment, error: 'Please enter content' %>
-  <%= f.association :movie, collection: Movie.all, promt: 'Choose a movie' %>
-  <%= f.button :submit %>
-<% end %>
+<br>
 
-<%= link_to 'Return to List', lists_path %>
+<div class="w-50">
+  <%= simple_form_for([@list, @bookmark]) do |f| %>
+    <%= f.input :comment, error: 'Please enter content' %>
+    <%= f.association :movie, collection: Movie.all, promt: 'Choose a movie' %>
+    <%= f.button :submit, class:'btn btn-dark' %>
+  <% end %>
+</div>
+
+<br>
+
+<%= link_to 'Return to List', lists_path, class:'btn btn-dark' %>

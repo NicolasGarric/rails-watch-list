@@ -1,4 +1,6 @@
-<p>Create a list :</p>
+<h4>Create a list :</h4>
+
+<br>
 
 <%= form_with model: @list do |f| %>
   <%= f.label :name %>
@@ -7,4 +9,6 @@
   <%= f.submit %>
 <% end %>
 
-<%= link_to 'Return to List', lists_path %>
+<br>
+
+<%= link_to 'Return to List', lists_path, class:'btn btn-dark' %>
