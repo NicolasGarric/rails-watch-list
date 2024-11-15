@@ -1,0 +1,9 @@
+<p>Create a bookamrk :</p>
+
+<%= simple_form_for([@list, @bookmark]) do |f| %>
+  <%= f.input :comment, error: 'Please enter content' %>
+  <%= f.association :movie, collection: Movie.all, promt: 'Choose a movie' %>
+  <%= f.button :submit %>
+<% end %>
+
+<%= link_to 'Return to List', lists_path %>
